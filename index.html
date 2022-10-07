@@ -20,8 +20,12 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-T49P5J2');</script>
     <!-- End Google Tag Manager -->
-    <script> 
-        window.addEventListener('click_purchase', function(){ alert("Purchase Triggered!"); });
+    <script>
+        function triggerpurchase() {
+            const evt = new CustomEvent("click_purchase");
+            window.dispatchEvent(evt);
+            alert("Purchase Triggered")
+        }
     </script>
 
 </head>
@@ -34,7 +38,7 @@
 
     <h1>CMP v2 Server Side Tagging</h1>
     <img src="https://1nf2x118nwr23j3l7o2i40qd-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/190208-UCS-Logo-800px.png" alt="uc-logo">
-    <button type="button" onclick="dispatchEvent(new Event('click_purchase'))">Trigger Purchase</button>
+    <button type="button" onclick="triggerpurchase()">Trigger Purchase</button>
 </body>
 
 </html>
