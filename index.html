@@ -24,8 +24,10 @@
         function triggerpurchase() {
             const evt = new CustomEvent("click_purchase");
             window.dispatchEvent(evt);
-            alert("Purchase Triggered")
         }
+    </script>
+    <script>
+        window.addEventListener("click_purchase", alert("Purchase Triggered"));
     </script>
 
 </head>
