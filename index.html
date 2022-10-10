@@ -22,12 +22,10 @@
     <!-- End Google Tag Manager -->
     <script>
         function triggerpurchase() {
-            const evt = new CustomEvent("click_purchase");
-            window.dispatchEvent(evt);
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({'event': 'click_purchase'});
+            Console.log("Click Purchase triggered")
         }
-    </script>
-    <script>
-        window.addEventListener("click_purchase", alert("Purchase Triggered"));
     </script>
 
 </head>
